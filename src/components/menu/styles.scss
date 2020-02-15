@@ -1,0 +1,71 @@
+.menu-btn {
+  border: 1px solid #111;
+  background: #fff url("/images/menu.png") no-repeat center center;
+  background-size: contain;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 99;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+    background-color: #fff !important;
+    border: 1px solid #111 !important;
+  }
+}
+.shader {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  transition: 0.5s linear;
+  overflow: hidden;
+  &.open {
+    display: block;
+  }
+}
+.menu-box {
+  width: 80%;
+  max-width: 400px;
+  padding: 1em;
+  position: fixed;
+  z-index: 9999;
+  right: 0;
+  top: 0;
+  overflow-y: auto;
+  background: #111;
+  color: #fff;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(110%);
+  &.open {
+    transform: translateX(0%);
+  }
+  .btn {
+    width: 100%;
+    text-align: center;
+    margin: 15px 0;
+    display: block;
+  }
+  select {
+    display: block;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    margin: 5px 0;
+  }
+  label {
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+  }
+}

@@ -1,0 +1,52 @@
+@mixin random-bg() {
+  $color: rgb(random(255), random(255), random(255));
+  background-color: $color;
+  &.monochrome {
+    background-color: desaturate($color, 100%);
+  }
+}
+%equal-width {
+  @media all and (min-width: 960px) {
+    flex: 1;
+  }
+}
+.item {
+  display: inherit;
+  flex: 0 0 33.333334%;
+  height: auto;
+  border: 1px solid #fff;
+  padding: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 300ms linear;
+  h1,
+  h2,
+  p {
+    text-align: center;
+  }
+  &.rotate {
+    h1,
+    h2,
+    p {
+      transform: rotate(180deg);
+    }
+  }
+  @for $i from 0 to 15 {
+    &:nth-child(#{$i}) {
+      order: #{$i};
+      @if $i > 6 {
+        @extend %equal-width;
+      }
+    }
+    &.color-#{$i} {
+      @include random-bg();
+    }
+  }
+  @media all and (max-width: 960px) {
+    min-height: 200px;
+  }
+  @media all and (max-width: 768px) {
+    flex: 0 0 100%;
+  }
+}

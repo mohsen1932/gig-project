@@ -1,0 +1,25 @@
+.loading {
+  border-color: #eee !important;
+  .title {
+    width: 30%;
+    height: 30px;
+  }
+  .text {
+    width: 70%;
+    height: 30px;
+    margin-top: 1em;
+  }
+}
+@keyframes loading {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+.loading-animate {
+  background: linear-gradient(90deg, #eee 25%, #e0e0e0 37%, #eee 63%);
+  animation: loading 1.4s ease infinite;
+  background-size: 400% 100%;
+}
